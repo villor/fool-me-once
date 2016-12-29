@@ -2,7 +2,7 @@
   "name": "fool-me-once",
   "version": "1.0.0",
   "description": "Trivia with lies",
-  "main": "server/index.js",
+  "main": "index.js",
   "scripts": {
     "start": "npm-run-all --parallel watch:server watch:app",
     "watch:server": "nodemon index.js --exec babel-node",
