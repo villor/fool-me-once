@@ -18,7 +18,7 @@ var config = {
 				include: APP_DIR,
 				query: {
 					babelrc: false,
-					presets: ['es2015', 'react']
+					presets: ['latest', 'react']
 				}
 			}
 		]
