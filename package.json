@@ -4,8 +4,9 @@
   "description": "Trivia with lies",
   "main": "server/index.js",
   "scripts": {
-    "start": "nodemon server/index.js --exec babel-node",
-    "watch": "webpack -d --watch",
+    "start": "npm-run-all --parallel watch:server watch:app",
+    "watch:server": "nodemon index.js --exec babel-node",
+    "watch:app": "webpack -d --watch",
     "test": "not yet :-)"
   },
   "repository": {
@@ -38,6 +39,7 @@
     "babel-preset-latest": "^6.16.0",
     "babel-preset-react": "^6.16.0",
     "nodemon": "^1.11.0",
+    "npm-run-all": "^3.1.2",
     "webpack": "^1.14.0"
   }
 }
