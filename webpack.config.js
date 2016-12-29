@@ -10,6 +10,7 @@ var config = {
 		path: BUILD_DIR,
 		filename: 'bundle.js'
 	},
+	devtool: 'source-map',
 	module: {
 		loaders: [
 			{
@@ -20,8 +21,15 @@ var config = {
 					babelrc: false,
 					presets: ['latest', 'react']
 				}
+			},
+			{
+				test: /\.scss$/,
+				loaders: ['style-loader', , 'css-loader?sourceMap', 'sass-loader?sourceMap']
 			}
 		]
+	},
+	sassLoader: {
+		includePaths: [APP_DIR + '/stylesheets']
 	}
 }
 
