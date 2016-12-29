@@ -38,3 +38,5 @@ jspm_packages
 
 public/bundle.js
 public/bundle.js.map
+
+.sublime-project*
