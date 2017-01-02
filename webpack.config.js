@@ -19,7 +19,7 @@ var config = {
 				include: APP_DIR,
 				query: {
 					babelrc: false,
-					presets: ['latest', 'react']
+					presets: ['latest', 'stage-2', 'react']
 				}
 			},
 			{

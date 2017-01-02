@@ -1,20 +1,19 @@
+import http from 'http';
 import path from 'path';
 import express from 'express';
-import bodyParser from 'body-parser';
+import socketio from 'socket.io';
 
-let app = express();
+const app = express();
+const server = http.Server(app);
+const io = socketio(server);
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-	extended: true
-}));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/api', (req, res) => {
-	res.send('Fool me once!');
+io.on('connection', (socket) => {
+	io.emit('hello', 'Hello world!');
 });
 
-const server = app.listen(process.env.PORT || 3000, () => {
+server.listen(process.env.PORT || 3000, () => {
 	const {
 		address,
 		port
